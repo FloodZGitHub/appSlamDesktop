@@ -1,0 +1,243 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RestSharp/107.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/RestSharp.dll": {}
+        }
+      },
+      "RestSharp.Newtonsoft.Json/1.5.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
+          "RestSharp": "106.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/RestSharp.Serializers.Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.Serializers.Newtonsoft.Json.dll": {}
+        }
+      },
+      "Ticketmaster.Core/2.0.5": {
+        "type": "package",
+        "dependencies": {
+          "RestSharp": "106.11.7"
+        },
+        "compile": {
+          "lib/netstandard2.1/Ticketmaster.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Ticketmaster.Core.dll": {}
+        }
+      },
+      "Ticketmaster.Discovery/2.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Ticketmaster.Core": "2.0.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Ticketmaster.Discovery.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Ticketmaster.Discovery.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Newtonsoft.Json/12.0.1": {
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.pdb",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.pdb",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.pdb",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.pdb",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.pdb",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
+    "RestSharp/107.3.0": {
+      "sha512": "qu+A+VAnVLX3OeWVNm11UJz0aVErqSfYqIiOUbJM9x98uLymCOoL/oXRAjMb6XHra27WXxHmzy9EKEOKXWR6Pw==",
+      "type": "package",
+      "path": "restsharp/107.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/RestSharp.dll",
+        "lib/net5.0/RestSharp.xml",
+        "lib/net6.0/RestSharp.dll",
+        "lib/net6.0/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.107.3.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
+      ]
+    },
+    "RestSharp.Newtonsoft.Json/1.5.1": {
+      "sha512": "vQaByN85aGazf45Xfseu+/8PmTuOyngqSXr+jILFYZxr51NARQ4WAyVruJAVzfpFkqXQ9aQtw2+yaygyGafjYg==",
+      "type": "package",
+      "path": "restsharp.newtonsoft.json/1.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.Serializers.Newtonsoft.Json.dll",
+        "lib/netstandard2.0/RestSharp.Serializers.Newtonsoft.Json.dll",
+        "restsharp.newtonsoft.json.1.5.1.nupkg.sha512",
+        "restsharp.newtonsoft.json.nuspec"
+      ]
+    },
+    "Ticketmaster.Core/2.0.5": {
+      "sha512": "p3fD0ah0WPzDzo+caaKw2GuKCHMeQMBTtiw1kxTK8f+X4PIbCSwb9fzIHrkvfX8uxhXJPacSaGBILazlIZY/yQ==",
+      "type": "package",
+      "path": "ticketmaster.core/2.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/netstandard2.1/Ticketmaster.Core.dll",
+        "ticketmaster.core.2.0.5.nupkg.sha512",
+        "ticketmaster.core.nuspec",
+        "tm.jpg"
+      ]
+    },
+    "Ticketmaster.Discovery/2.0.5": {
+      "sha512": "CJbpPhq7eXy7qXvFz3BlVt2eCmRWP55XD6caSCJ3XdMvkr5CPCmUKpZsdFFGbx2ttPAuYwjcFiJihQerHaz6ng==",
+      "type": "package",
+      "path": "ticketmaster.discovery/2.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/netstandard2.1/Ticketmaster.Discovery.dll",
+        "ticketmaster.discovery.2.0.5.nupkg.sha512",
+        "ticketmaster.discovery.nuspec",
+        "tm.jpg"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "RestSharp >= 107.3.0",
+      "RestSharp.Newtonsoft.Json >= 1.5.1",
+      "Ticketmaster.Discovery >= 2.0.5"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\flore\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Epsi\\C#\\appSlam\\appSlam\\appSlam.csproj",
+      "projectName": "appSlam",
+      "projectPath": "D:\\Epsi\\C#\\appSlam\\appSlam\\appSlam.csproj",
+      "packagesPath": "C:\\Users\\flore\\.nuget\\packages\\",
+      "outputPath": "D:\\Epsi\\C#\\appSlam\\appSlam\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\flore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "RestSharp": {
+            "target": "Package",
+            "version": "[107.3.0, )"
+          },
+          "RestSharp.Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[1.5.1, )"
+          },
+          "Ticketmaster.Discovery": {
+            "target": "Package",
+            "version": "[2.0.5, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
