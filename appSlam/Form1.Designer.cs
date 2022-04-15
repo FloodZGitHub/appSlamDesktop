@@ -1,4 +1,6 @@
-﻿namespace appSlam
+﻿using System.Windows.Forms;
+
+namespace appSlam
 {
     partial class Form1
     {
@@ -38,31 +40,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(494, 50);
+            this.label1.Location = new System.Drawing.Point(432, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 20);
+            this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adresse mail";
             // 
             // mailInput
             // 
-            this.mailInput.Location = new System.Drawing.Point(479, 94);
+            this.mailInput.Location = new System.Drawing.Point(419, 70);
+            this.mailInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mailInput.Name = "mailInput";
-            this.mailInput.Size = new System.Drawing.Size(125, 27);
+            this.mailInput.Size = new System.Drawing.Size(110, 23);
             this.mailInput.TabIndex = 1;
             // 
             // passwordInput
             // 
-            this.passwordInput.Location = new System.Drawing.Point(479, 219);
+            this.passwordInput.Location = new System.Drawing.Point(419, 164);
+            this.passwordInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordInput.Name = "passwordInput";
-            this.passwordInput.Size = new System.Drawing.Size(125, 27);
+            this.passwordInput.Size = new System.Drawing.Size(110, 23);
             this.passwordInput.TabIndex = 2;
+            this.passwordInput.UseSystemPasswordChar = true;
             // 
             // btConnect
             // 
-            this.btConnect.Location = new System.Drawing.Point(498, 287);
+            this.btConnect.Location = new System.Drawing.Point(436, 215);
+            this.btConnect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btConnect.Name = "btConnect";
-            this.btConnect.Size = new System.Drawing.Size(94, 29);
+            this.btConnect.Size = new System.Drawing.Size(82, 22);
             this.btConnect.TabIndex = 3;
             this.btConnect.Text = "Connexion";
             this.btConnect.UseVisualStyleBackColor = true;
@@ -71,22 +77,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(494, 166);
+            this.label2.Location = new System.Drawing.Point(432, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.Size = new System.Drawing.Size(77, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Mot de passe";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 543);
+            this.ClientSize = new System.Drawing.Size(959, 407);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btConnect);
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.mailInput);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace appSlam
 {
-    internal class Annonce
+    public class Annonce
     {
         public int id { get; set; }
         public string designation { get; set; }
@@ -18,8 +18,9 @@ namespace appSlam
         public string nom { get; set; }
         public string mail { get; set; }
         public string telephone { get; set; }
-        public string user { get; set; }
-        public string[] types { get; set; }
-        public string[] fichiers { get; set; }
+        public string utilisateur { get; set; }
+        public string[] type { get; set; }
+        public string[] fichier { get; set; }
+        public string prix { get; set; }
     }
 }

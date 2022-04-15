@@ -30,5 +30,14 @@ namespace appSlam
             this.Hide();
             form1.Show();
         }
+
+        private void buttonAnnonce_Click(object sender, EventArgs e)
+        {
+            AnnonceForm annonceForm = new AnnonceForm();
+            if (annonceForm.ShowDialog() == DialogResult.Cancel)
+            {
+                
+            }
+        }
     }
 }

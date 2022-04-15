@@ -1,4 +1,6 @@
-﻿namespace appSlam
+﻿using System.Windows.Forms;
+
+namespace appSlam
 {
     partial class UsersForm
     {

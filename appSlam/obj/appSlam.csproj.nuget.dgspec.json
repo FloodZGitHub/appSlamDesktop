@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Epsi\\C#\\appSlam\\appSlam\\appSlam.csproj": {}
+    "C:\\Users\\lucas\\OneDrive\\Bureau\\appSlamDesktop\\appSlam\\appSlam.csproj": {}
   },
   "projects": {
-    "D:\\Epsi\\C#\\appSlam\\appSlam\\appSlam.csproj": {
+    "C:\\Users\\lucas\\OneDrive\\Bureau\\appSlamDesktop\\appSlam\\appSlam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Epsi\\C#\\appSlam\\appSlam\\appSlam.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Bureau\\appSlamDesktop\\appSlam\\appSlam.csproj",
         "projectName": "appSlam",
-        "projectPath": "D:\\Epsi\\C#\\appSlam\\appSlam\\appSlam.csproj",
-        "packagesPath": "C:\\Users\\flore\\.nuget\\packages\\",
-        "outputPath": "D:\\Epsi\\C#\\appSlam\\appSlam\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\OneDrive\\Bureau\\appSlamDesktop\\appSlam\\appSlam.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\OneDrive\\Bureau\\appSlamDesktop\\appSlam\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\flore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +75,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
