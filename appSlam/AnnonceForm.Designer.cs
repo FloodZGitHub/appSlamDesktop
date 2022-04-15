@@ -38,6 +38,8 @@
             this.annoncetext = new System.Windows.Forms.Label();
             this.Modifier = new System.Windows.Forms.Button();
             this.buttonAnnuler = new System.Windows.Forms.Button();
+            this.buttonSupprimer = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // annonceLabel
@@ -120,11 +122,33 @@
             this.buttonAnnuler.Text = "Retour";
             this.buttonAnnuler.UseVisualStyleBackColor = true;
             // 
+            // buttonSupprimer
+            // 
+            this.buttonSupprimer.Location = new System.Drawing.Point(655, 55);
+            this.buttonSupprimer.Name = "buttonSupprimer";
+            this.buttonSupprimer.Size = new System.Drawing.Size(75, 23);
+            this.buttonSupprimer.TabIndex = 21;
+            this.buttonSupprimer.Text = "Supprimer";
+            this.buttonSupprimer.UseVisualStyleBackColor = true;
+            this.buttonSupprimer.Click += new System.EventHandler(this.buttonSupprimer_Click);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(655, 95);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.TabIndex = 22;
+            this.buttonRefresh.Text = "rafraichir";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // AnnonceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRefresh);
+            this.Controls.Add(this.buttonSupprimer);
             this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.Modifier);
             this.Controls.Add(this.annoncetext);
@@ -149,5 +173,7 @@
         private Label annoncetext;
         private Button Modifier;
         private Button buttonAnnuler;
+        private Button buttonSupprimer;
+        private Button buttonRefresh;
     }
 }

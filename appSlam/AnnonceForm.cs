@@ -24,18 +24,6 @@ namespace appSlam
 
             try
             {
-                var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
-
-                var request = new RestRequest("annonces", Method.Get);
-
-
-                var response = client.ExecuteAsync(request);
-
-                string rawResponse = response.Result.Content;
-
-                List<Annonce> newAnnonce = JsonConvert.DeserializeObject<List<Annonce>>(rawResponse);
-
-                this.newAnnonce = newAnnonce;
                 RefreshList();
                 
                 if (newAnnonce == null)
@@ -66,6 +54,19 @@ namespace appSlam
 
     private void RefreshList()
         {
+            var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
+
+            var request = new RestRequest("annonces", Method.Get);
+
+
+            var response = client.ExecuteAsync(request);
+
+            string rawResponse = response.Result.Content;
+
+            List<Annonce> newAnnonce = JsonConvert.DeserializeObject<List<Annonce>>(rawResponse);
+
+            this.newAnnonce = newAnnonce;
+
             listView1.Items.Clear();
             foreach (Annonce item in newAnnonce)
             {
@@ -81,5 +82,22 @@ namespace appSlam
             }
         }
 
+        private void buttonSupprimer_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count != 0)
+            {
+                Annonce Supp = (Annonce)listView1.SelectedItems[0].Tag;
+                var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
+
+                var request = new RestRequest("annonces/" + Supp.id, Method.Delete);
+
+                var responseUtilisateur = client.ExecuteAsync(request);
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshList();
+        }
     }
 }
