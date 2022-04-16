@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace appSlam
 {
-    internal class Utilisateur
+    public class Utilisateur
     {
         public int id { get; set; }
         public string nom { get; set; }

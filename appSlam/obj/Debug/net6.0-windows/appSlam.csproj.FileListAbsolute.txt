@@ -82,3 +82,5 @@ C:\Users\lucas\OneDrive\Bureau\appSlamDesktop\appSlam\obj\Debug\net6.0-windows\a
 C:\Users\lucas\OneDrive\Bureau\appSlamDesktop\appSlam\obj\Debug\net6.0-windows\appSlam.genruntimeconfig.cache
 C:\Users\lucas\OneDrive\Bureau\appSlamDesktop\appSlam\obj\Debug\net6.0-windows\ref\appSlam.dll
 C:\Users\lucas\OneDrive\Bureau\appSlamDesktop\appSlam\obj\Debug\net6.0-windows\appSlam.AnnonceModif.resources
+D:\Epsi\C#\appSlam\appSlam\obj\Debug\net6.0-windows\appSlam.AnnonceForm.resources
+D:\Epsi\C#\appSlam\appSlam\obj\Debug\net6.0-windows\appSlam.AnnonceModif.resources

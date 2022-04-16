@@ -14,7 +14,7 @@ namespace appSlam
 {
     public partial class UsersAffiche : Form
     {
-        public UsersAffiche(string numeroUser)
+        public UsersAffiche(int numeroUser)
         {
             InitializeComponent();
             usersLabel.Text = "";
@@ -32,7 +32,7 @@ namespace appSlam
 
                 foreach (var item in newUtilisateur)
                 {
-                    if (item.id == Int16.Parse(numeroUser))
+                    if (item.id == numeroUser)
                     {
                         usersLabel.Text += "id : " + item.id + "\nnom : " + item.nom + "\nprénom : " + item.prenom + "\nDate Inscription : " + item.dateinscription + "\nNom équipage : " + item.nomEquipage + "\nUser : " + item.user;
                         annoncesLabel.Text ="Annonces : ";

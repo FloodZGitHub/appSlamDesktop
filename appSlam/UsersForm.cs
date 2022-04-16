@@ -17,46 +17,51 @@ namespace appSlam
         public UsersForm()
         {
             InitializeComponent();
-            usersLabel.Text = "";
             afficher_utilisateur();
         }
 
         private async void btOK_Click(object sender, EventArgs e)
         {
-            if (comboBoxAction.Text == "Supprimer")
+            if (listView1.SelectedItems.Count != 0)
             {
-                try
+                Utilisateur utilisateur = (Utilisateur)listView1.SelectedItems[0].Tag;
+
+                if (comboBoxAction.Text == "Supprimer")
                 {
-                var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
+                    try
+                    {
+                        var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
 
-                var request= new RestRequest("utilisateurs/"+idUtilisateurInput.Text, Method.Delete);
+                        var request = new RestRequest("utilisateurs/" + utilisateur.id, Method.Delete);
 
-                var responseUtilisateur = await client.ExecuteAsync(request);
+                        var responseUtilisateur = await client.ExecuteAsync(request);
 
-                labelResultatAction.Text = "utilisateur supprimé";
+                        labelResultatAction.Text = "utilisateur supprimé";
+                    }
+                    catch (Exception f)
+                    {
+                        Console.WriteLine("{0} Exception caught.", f);
+                    }
+
+                    afficher_utilisateur();
                 }
-                catch (Exception f)
+                else if (comboBoxAction.Text == "Modifier")
                 {
-                    Console.WriteLine("{0} Exception caught.", f);
+                    if (listView1.SelectedItems.Count != 0)
+                    {
+                        UsersModif userModif = new UsersModif((Utilisateur)listView1.SelectedItems[0].Tag);
+                        userModif.ShowDialog();
+                    }
                 }
 
-                afficher_utilisateur();
-            }
-            else if (comboBoxAction.Text == "Modifier")
-            {
-                UsersModif usersModif = new UsersModif(int.Parse(idUtilisateurInput.Text));
-                this.Hide();
-                usersModif.Show();
-            }
-
-            else if (comboBoxAction.Text == "Afficher")
-            {
-                UsersAffiche usersAffiche = new UsersAffiche(idUtilisateurInput.Text);
-                this.Hide();
-                usersAffiche.Show();
+                else if (comboBoxAction.Text == "Afficher")
+                {
+                    UsersAffiche usersAffiche = new UsersAffiche(utilisateur.id);
+                    this.Hide();
+                    usersAffiche.Show();
+                }
             }
         }
-
         private void UsersForm_Load(object sender, EventArgs e)
         {
 
@@ -71,7 +76,6 @@ namespace appSlam
 
         private void afficher_utilisateur()
         {
-            usersLabel.Text = "";
             try
             {
                 var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
@@ -84,9 +88,18 @@ namespace appSlam
 
                 List<Utilisateur> newUtilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(rawResponse);
 
+                listView1.Items.Clear();
                 foreach (var item in newUtilisateur)
                 {
-                    usersLabel.Text += "L'id est : " + item.id + " Le nom est : " + item.nom + " Le prénom est : " + item.prenom + "\n";
+                    string[] myDifferenceElement = new string[5] { "", "", "", "", "" };
+                    myDifferenceElement[0] = item.id.ToString();
+                    myDifferenceElement[1] = item.nom;
+                    myDifferenceElement[2] = item.prenom;
+                    myDifferenceElement[3] = item.dateinscription;
+                    myDifferenceElement[4] = item.nomEquipage;
+                    ListViewItem myItem = new ListViewItem(myDifferenceElement);
+                    myItem.Tag = item;
+                    listView1.Items.Add(myItem);
                 }
             }
             catch (Exception e)

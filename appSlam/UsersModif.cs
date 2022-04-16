@@ -14,43 +14,16 @@ namespace appSlam
 {
     public partial class UsersModif : Form
     {
-        public UsersModif(int idUtilisateur)
+        Utilisateur utilisateurToEdit;
+        public UsersModif(Utilisateur utilisateurToEdit)
         {
             InitializeComponent();
-            
-            try
-            {
-                var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
 
-                var request = new RestRequest("utilisateurs", Method.Get);
-
-                var response = client.ExecuteAsync(request);
-
-                string rawResponse = response.Result.Content;
-
-                List<Utilisateur> newUtilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(rawResponse);
-
-                foreach (var item in newUtilisateur)
-                {
-                    if (item.id == idUtilisateur)
-                    {
-                        idUtilisateurLabel.Text = item.id.ToString();
-                        nomInput.Text = item.nom;
-                        prenomInput.Text = item.prenom;
-                        inscriptionDateLabel.Text = item.dateinscription;
-                        equipageInput.Text = item.nomEquipage;
-                    }
-                }
-                if (idUtilisateurLabel.Text == "")
-                {
-                    idUtilisateurLabel.Text = "Utilisateur non trouvé";
-                }
-
-            }
-            catch (Exception ex)
-            { Console.WriteLine(ex.Message);
-                idUtilisateurLabel.Text = "Utilisateur non trouvé";
-            }
+            idUtilisateurLabel.Text = utilisateurToEdit.id.ToString();
+            nomInput.Text = utilisateurToEdit.nom;
+            prenomInput.Text = utilisateurToEdit.prenom;
+            inscriptionDateLabel.Text = utilisateurToEdit.dateinscription;
+            equipageInput.Text = utilisateurToEdit.nomEquipage;
         }
 
         private void UsersModif_Load(object sender, EventArgs e)
@@ -70,68 +43,19 @@ namespace appSlam
         {
             if(nomInput.Text != "" && prenomInput.Text != "" && equipageInput.Text != "")
             {
+                utilisateurToEdit.nom = nomInput.Text;
+                utilisateurToEdit.prenom = prenomInput.Text;
+                utilisateurToEdit.nomEquipage = equipageInput.Text;
 
-                try
-                {
-                    var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
+                var client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
 
-                    var request = new RestRequest("utilisateurs", Method.Get);
+                var request = new RestRequest("utilisateurs/" + utilisateurToEdit.id, Method.Put);
 
-                    var response = client.ExecuteAsync(request);
+                request.AddJsonBody(utilisateurToEdit);
 
-                    string rawResponse = response.Result.Content;
+                var response = client.ExecuteAsync(request);
 
-                    List<Utilisateur> newUtilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(rawResponse);
-
-                    Utilisateur utilisateurInput = new Utilisateur();
-                    utilisateurInput.id = Int16.Parse(idUtilisateurLabel.Text);
-                    utilisateurInput.nom = nomInput.Text;
-                    utilisateurInput.prenom = prenomInput.Text;
-                    utilisateurInput.dateinscription = inscriptionDateLabel.Text;
-                    utilisateurInput.nomEquipage = equipageInput.Text;
-
-                    foreach (var item in newUtilisateur)
-                    {
-                        if (item.id == Int16.Parse(idUtilisateurLabel.Text))
-                        {
-                            foreach(var annonce in item.annonces)
-                            {
-                                utilisateurInput.annonces.Append(annonce);
-                            }
-                            foreach(var messageEnvoi in item.messageenvoi)
-                            {
-                                utilisateurInput.messageenvoi.Append(messageEnvoi);
-                            }
-                            foreach (var messageRecu in item.messagerecu)
-                            {
-                                utilisateurInput.messagerecu.Append(messageRecu);
-                            }
-                            utilisateurInput.user = item.user;
-                        }
-                    }
-                        
-                    client = new RestClient("https://s4-8003.nuage-peda.fr/slam/public/api");
-
-                    request = new RestRequest("utilisateurs/" + idUtilisateurLabel.Text, Method.Put);
-
-                    request.AddJsonBody(utilisateurInput);
-
-
-                    response = client.ExecuteAsync(request);
-
-                    rawResponse = response.Result.Content;
-
-                    MessageBox.Show(rawResponse);
-
-                    UsersForm usersForm = new UsersForm();
-                    this.Close();
-                    this.Dispose();
-                    usersForm.Show();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                var rawResponse = response.Result.Content;
 
             }
             else
