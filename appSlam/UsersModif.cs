@@ -18,6 +18,7 @@ namespace appSlam
         public UsersModif(Utilisateur utilisateurToEdit)
         {
             InitializeComponent();
+            this.utilisateurToEdit = utilisateurToEdit;
 
             idUtilisateurLabel.Text = utilisateurToEdit.id.ToString();
             nomInput.Text = utilisateurToEdit.nom;
@@ -33,10 +34,7 @@ namespace appSlam
 
         private void button2_Click(object sender, EventArgs e)
         {
-            UsersForm usersForm = new UsersForm();
             this.Close();
-            this.Dispose();
-            usersForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,6 +60,8 @@ namespace appSlam
             {
                 MessageBox.Show("Veuillez remplir tous les champs");
             }
+
+            this.Close();
         }
     }
 }

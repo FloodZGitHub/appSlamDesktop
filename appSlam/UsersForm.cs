@@ -60,6 +60,10 @@ namespace appSlam
                     this.Hide();
                     usersAffiche.Show();
                 }
+                else if (comboBoxAction.Text == "Rafraichir")
+                {
+                    afficher_utilisateur();
+                }
             }
         }
         private void UsersForm_Load(object sender, EventArgs e)

@@ -59,7 +59,8 @@ namespace appSlam
             this.comboBoxAction.Items.AddRange(new object[] {
             "Afficher",
             "Modifier",
-            "Supprimer"});
+            "Supprimer",
+            "Rafraichir"});
             this.comboBoxAction.Location = new System.Drawing.Point(871, 223);
             this.comboBoxAction.Name = "comboBoxAction";
             this.comboBoxAction.Size = new System.Drawing.Size(141, 28);
