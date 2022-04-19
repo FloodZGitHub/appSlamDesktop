@@ -34,7 +34,8 @@ namespace appSlam
                 {
                     if (item.id == numeroUser)
                     {
-                        usersLabel.Text += "id : " + item.id + "\nnom : " + item.nom + "\nprénom : " + item.prenom + "\nDate Inscription : " + item.dateinscription + "\nNom équipage : " + item.nomEquipage + "\nUser : " + item.user;
+                        usersLabel.Text += "id : " + item.id + "\nnom : " + item.nom + "\nprénom : " 
+                            + item.prenom + "\nDate Inscription : " + item.dateinscription + "\nNom équipage : " + item.nomEquipage + "\nUser : " + item.user;
                         annoncesLabel.Text ="Annonces : ";
                         foreach (var annonces in item.annonces)
                         {
